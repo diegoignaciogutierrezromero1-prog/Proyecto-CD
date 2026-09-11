@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  asterisk_pbx:
+    build: .
+    container_name: central_voip
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - ./config:/etc/asterisk
